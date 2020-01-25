@@ -15,9 +15,14 @@
 <body>
 
     <h1>Code Converter</h1>
+
+    <form action="/website/code_convert_page/"> <!-- This is the form where the file will be submitted -->
+        <input type="file" name="tempFile">
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
     
-    <input type="file"/>
-    
+
 </body>
 
 <script>
@@ -29,7 +34,7 @@
         window.location = '/website/code_convert_page/code_convert.html';
     }
 
-</script>
-
-
-</html>
+    function Upload() {
+        alert("yo");
+    }
+</script></html>
