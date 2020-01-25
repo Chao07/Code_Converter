@@ -1,0 +1,1 @@
+TextView hello = (Textview) findViewById(R.id.hello);
