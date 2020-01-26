@@ -3,8 +3,7 @@
 
 <head>
     <title>Home</title>
-
-    <style>
+	<style>
         /*Page border*******************/
         #banner {
             position: fixed;
@@ -133,17 +132,17 @@
     
     <h1>Code Converter</h1>
 
-    <form action="/website/code_convert_page/">
+    <form action="/website/code_convert_page/" method="GET">
         <!-- This is the form where the file will be submitted -->
-        &emsp;&emsp;&emsp;&emsp;&emsp;<input type="file" name="tempFile">
+        &emsp;&emsp;&emsp;&emsp;&emsp;<input type="file" id="filename" name="tempFile" required>
 		<br><br>
-		<input type="checkbox" name="option"> Swift to Java 
-		<br><br>
-		<input type="checkbox" name="option"> Java to Swift
+		<select> 
+			<option value="swifttojava" id="stj" name="STJ">Swift to Java</option>
+			<option value="javatoswift" id="jts" name="JTS">Java to Swift</option>
+		</select>
         <br><br>
         &emsp;<input type="submit">
     </form>
-
 </body>
 
 <script> // This is where the JavaScript goes. Examples below.
