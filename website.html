@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+	<style>
+        /*Page border*******************/
+        #banner {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: #4e4e4e;
+            width: 100%;
+            height: 5%;
+        }
+
+        #banner-content {
+            top: 0px;
+            left: 0px;
+            position: fixed;
+        }
+
+        .inline-buttons {
+            float: left;
+        }
+
+        .block {
+            border: 1px solid rgb(238, 238, 238, 1);
+            background-color: #4e4e4e;
+            color: rgb(238, 238, 238, 1);
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            width: 50vw;
+        }
+
+        .block:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #bottom,
+        #left,
+        #right {
+            background: #000000;
+            position: fixed;
+        }
+
+        #left,
+        #right {
+            top: 0px;
+            bottom: 0px;
+            width: 10%;
+        }
+
+        #left {
+            left: 0px;
+        }
+
+        #right {
+            right: 0px;
+        }
+
+        #bottom {
+            left: 0px;
+            right: 0px;
+            height: 20px;
+        }
+
+        #bottom {
+            bottom: 0px;
+        }
+
+        /*******************************/
+
+        /*Entire page*******************/
+        html {
+            font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+            color: rgb(238, 238, 238, 1);
+            margin: auto;
+            background-color: rgb(53, 54, 58);
+        }
+
+        /*******************************/
+
+        /*Links************************/
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /*******************************/
+
+
+        /*Lists************************/
+        nav ul {
+            padding: 0px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        /*******************************/
+
+        /*Body*/
+        body {
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        /*******************************/
+    </style>
+</head>
+
+<body>
+
+    <h1>TAMUhack 2020 Code Converter</h1>
+
+    <p>By: CJ Sewell, Subrajit Surendran, Alex Smith</p>
+
+    <p>This website converts Swift code to Android Code.</p>
+    
+    <br><br>
+    
+    <h1>Code Converter</h1>
+
+    <form action="/website/code_convert_page/" method="GET">
+        <!-- This is the form where the file will be submitted -->
+        &emsp;&emsp;&emsp;&emsp;&emsp;<input type="file" id="filename" name="tempFile" required>
+		<br><br>
+		<select> 
+			<option value="swifttojava" id="stj" name="STJ">Swift to Java</option>
+			<option value="javatoswift" id="jts" name="JTS">Java to Swift</option>
+		</select>
+        <br><br>
+        &emsp;<input type="submit">
+    </form>
+</body>
+
+<script> // This is where the JavaScript goes. Examples below.
+    function Home() {
+        window.location = '/website/';
+    }
+
+    function CConvert() {
+        window.location = '/website/code_convert_page/code_convert.html';
+    }
+</script></html>
