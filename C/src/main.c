@@ -5,7 +5,8 @@
 
 //Convert Swift to Java Source files.
 
-static const char *swiftDeclarations[] = {"print","var","func", "import"};
+static const char *swiftDeclarations[] = {"print","var","func"};
+static const char *javaDeclarations[] = {"System.out.println", "auto", "public"};
 
 int main(int argc, char *argv[]){
 	
@@ -17,17 +18,28 @@ int main(int argc, char *argv[]){
 		perror(ERR1);
 		return EXIT_FAILURE;
 	}
-	char ch;
+	char ch, buffer[BUFSIZE];
 	char opStr[50];
+	
 	
 	fprintf(outputFile, "public class %s {\n", nameCheck(argv[2], opStr));
 	fprintf(outputFile, "\tpublic static void main(String[] args){\n");
+	
+	ch = fgetc(inputFile);
 	while(!feof(inputFile)){
-		ch = fgetc(inputFile);
 		fputc(ch, outputFile);
+		ch = fgetc(inputFile);
 	}
-	fputc('\t}', outputFile); 
-	fputc('\n}', outputFile); 
+	
+	/*while(fgets(buffer, BUFSIZE, inputFile)){
+		if(strstr(buffer, "import") != NULL){
+			}
+	}*/
+	
+	//Unfinished attempt to replace basic Swift keywords with Java keywords/funcs.
+	
+	fputc('}', outputFile); 
+	fputc('}', outputFile); 
 	
 	fclose(inputFile);
 	fclose(outputFile);
@@ -35,7 +47,7 @@ int main(int argc, char *argv[]){
 
 char *nameCheck(char *filename, char *opStr){
 	int i = 0;
-	char str2[40];
+	char str2[50];
 	while(filename[i] != '.'){
 		str2[i] = filename[i];
 		i++;
